@@ -1,4 +1,5 @@
-# Eight Queens Puzzle Solver
+# Genetic Algorithm Eight Queens
+
 
 This Python project uses a genetic algorithm to solve the Eight Queens Puzzle, a classic problem in combinatorial optimization. The goal is to place eight queens on an 8x8 chessboard in a way that no two queens threaten each other.
 
