@@ -35,10 +35,9 @@ def main():
     generations = 300
     crossover_rate = 0.8
     mutation_rate = 0.05
-    elite_count = 5  # Number of individuals selected for elitism
+    elite_count = 1  # Number of individuals selected for elitism
 
-    best_solution = genetic_algorithm(
-        population_size, generations, crossover_rate, mutation_rate, elite_count)
+    best_solution = genetic_algorithm(population_size, generations, crossover_rate, mutation_rate, elite_count)
 
     app = EightQueensUI(best_solution)
     app.mainloop()

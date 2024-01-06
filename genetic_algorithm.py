@@ -1,7 +1,10 @@
 import random
 
+
 def generate_random_permutation():
-    return random.sample(range(8), 8)
+    permutation = list(range(8))
+    random.shuffle(permutation)
+    return permutation
 
 
 def fitness(permutation):
@@ -18,8 +21,7 @@ def crossover(parent1, parent2):
     child = [None] * 8
 
     # Copy the values between crossover points from parent1 to child
-    child[crossover_points[0]:crossover_points[1]
-          ] = parent1[crossover_points[0]:crossover_points[1]]
+    child[crossover_points[0]:crossover_points[1]] = parent1[crossover_points[0]:crossover_points[1]]
 
     # Fill in the remaining positions with values from parent2
     remaining_indices = [i for i in range(8) if child[i] is None]
@@ -30,8 +32,7 @@ def crossover(parent1, parent2):
     # If there are still None values in child, fill them randomly
     for i in range(8):
         if child[i] is None:
-            child[i] = random.choice(
-                [val for val in range(8) if val not in child])
+            child[i] = random.choice([val for val in range(8) if val not in child])
 
     return child
 
